@@ -21,7 +21,7 @@ const bodyContent = document.getElementById("tbody");
 let healthyCheck = false;
 
 //Khái báo biến str hiển thị thông báo lỗi khi nhập dữ liệu
-let strErr ='';
+let strErr;
 
 //Khởi tạo giá trị ban đầu
 const pet1 = {
@@ -61,6 +61,7 @@ const arrPets = [pet1, pet2];
 
 //Kiểm tra dữ liệu đầu vào
 function ValidateInput(id, age, weight, length, type, breed) {
+	
   let isTrue = true;
   //Kiểm tra id trùng lặp hay k?
   if (arrPets.length > 0) {
@@ -189,7 +190,8 @@ function RenderTable(arr) {
 };
 //Thêm 1 thú cưng mới
 const addNewPet = function () {
-  let pet = {
+	strErr = '';
+	let pet = {
     id: petID.value,
     petName: petName.value,
     age: Number(petAge.value),
